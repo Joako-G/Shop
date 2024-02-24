@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+* {
+  font-family: 'Comfortaa';
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background-color: #101010;
+  color: white;
+}
+
+label {
+  display: block;
+}
+
+input {
+  width: 100%;
+}
+
+span {
+  display: block;
+  color: tomato;
+  font-size: x-small;
+}
+
+.products {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-product {
+  justify-content: space-between;
+  background-color: antiquewhite;
+  height: auto;
+  width: 280px;
+  margin: 15px;
+  padding: 5px;
+}
+
+.card-product h3 {
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}

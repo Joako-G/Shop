@@ -1,0 +1,10 @@
+.App {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
+}
