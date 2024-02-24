@@ -5,11 +5,9 @@ export function ShoppingCart ({ userProduct }) {
 
   useEffect(() => {
     const totalPrice = userProduct.reduce((acc, p) => acc + p.price, 0)
-    console.log('Precio total: ', totalPrice)
     setTotal(totalPrice)
   }, [])
 
-  console.log('Productos del usuario: ', userProduct)
   return (
     <>
       {

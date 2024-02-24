@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form'
 import { getUsersMkApi } from '../../service'
 import { useNavigate } from 'react-router-dom'
 
-const Login = ({ setUser }) => {
+const Login = ({ setUser, setUserProduct }) => {
   const { register, handleSubmit, formState: { errors } } = useForm()
   const navigate = useNavigate()
 
@@ -12,6 +12,7 @@ const Login = ({ setUser }) => {
         const user = dataA.find(u => u.user === data.username && u.password === data.password)
         if (user) {
           setUser(user)
+          setUserProduct(user.products)
           window.localStorage.setItem('user', JSON.stringify(user.user))
           navigate('/')
           console.log('Datos correctos')
