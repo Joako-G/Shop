@@ -1,4 +1,5 @@
 const SERVER_DOMAIN = 'https://fakestoreapi.com'
+const SERVER_DOMAINII = 'https://64cfbdccffcda80aff522398.mockapi.io/menu/users'
 
 export const getProducts = async () => {
   try {
@@ -10,19 +11,6 @@ export const getProducts = async () => {
     return response.json()
   } catch (error) {
     console.log('No se puedo acceder a la api')
-  }
-}
-
-export const getUsers = async () => {
-  try {
-    const response = await fetch(`${SERVER_DOMAIN}/users`)
-    if (!response.ok) {
-      throw new Error('Error')
-    }
-
-    return response.json()
-  } catch (error) {
-    console.log('Error en la peticion')
   }
 }
 
@@ -58,7 +46,7 @@ export const getUsersMkApi = async () => {
 
 export const addUser = async (user) => {
   try {
-    const response = await fetch('https://64cfbdccffcda80aff522398.mockapi.io/menu/users', {
+    const response = await fetch(`${SERVER_DOMAINII}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(user)
@@ -71,5 +59,22 @@ export const addUser = async (user) => {
     return data
   } catch (error) {
     console.log('Error en la peticion')
+  }
+}
+
+export const updateUser = async (userId, newProduct) => {
+  try {
+    const response = await fetch(`${SERVER_DOMAINII}/${userId}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ products: newProduct })
+    })
+
+    if (!response.ok) {
+      throw new Error('Error')
+    }
+    return response.json()
+  } catch (error) {
+    console.log('Erro en la peticion')
   }
 }

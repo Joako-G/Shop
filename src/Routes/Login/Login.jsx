@@ -12,7 +12,7 @@ const Login = ({ setUser }) => {
         const user = dataA.find(u => u.user === data.username && u.password === data.password)
         if (user) {
           setUser(user)
-          window.localStorage.setItem('user', JSON.stringify(user))
+          window.localStorage.setItem('user', JSON.stringify(user.user))
           navigate('/')
           console.log('Datos correctos')
         } else {
