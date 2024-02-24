@@ -29,12 +29,12 @@ function App () {
 
   const addUserProduct = (newProduct) => {
     const newUserProduct = [...userProduct, newProduct]
-    //  user.products = [...userProduct, newProduct]
-    updateUser(user.id, newUserProduct)
-      .then(data => console.log('Datos actualizados', data))
-      .catch(err => console.log('Error al actualizar los datos ', err))
-    setUserProduct(newUserProduct)
-    console.log('Lista de productos: ', user)
+    if (newUserProduct !== null) {
+      updateUser(user.id, newUserProduct)
+        .then(data => console.log('Datos actualizados', data))
+        .catch(err => console.log('Error al actualizar los datos ', err))
+      setUserProduct(newUserProduct)
+    }
   }
 
   const userFind = (userName) => {
