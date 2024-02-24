@@ -8,7 +8,7 @@ const NavBar = ({ firstName, lastName, setUser }) => {
 
   const logOut = () => {
     window.localStorage.removeItem('user')
-    setUser(null)
+    setUser({})
     navigate('/')
   }
 

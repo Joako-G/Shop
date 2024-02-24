@@ -29,7 +29,8 @@ function App () {
 
   const addUserProduct = (newProduct) => {
     const newUserProduct = [...userProduct, newProduct]
-    if (newUserProduct !== null) {
+    console.log('Usuario: ', user.id)
+    if (user.id !== null) {
       updateUser(user.id, newUserProduct)
         .then(data => console.log('Datos actualizados', data))
         .catch(err => console.log('Error al actualizar los datos ', err))
